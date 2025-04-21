@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórmula de Bhaskara</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="text">
+        <H1 class="pulsando">Fórmula de bhaskara</H1>
+        <h3>x = (-b ± √(b² - 4ac)) / (2a)</h3>
+    </div>
+    <div class="inputs">
+        <input type="number" id="a" placeholder="Valor de a">
+        <input type="number" id="b" placeholder="Valor de b">
+        <input type="number" id="c" placeholder="Valor de c">
+        <button onclick="">Calcular</button>
+    </div>
+
+    <div class="final">
+        <h3>Resultado:</h3>
+        <p id="resultado"></p>
+    </div>
+
+
+    <script>
+        var x1 = 0;
+        var x2 = 0;
+        function calcularBhaskara() {
+            const a = parseFloat(document.getElementById('a').value);
+            const b = parseFloat(document.getElementById('b').value);
+            const c = parseFloat(document.getElementById('c').value);
+
+            let delta = (b ** 2) - 4 * a * c;
+
+            x1 = (-b + Math.sqrt(delta)) / (2 * a);
+            x2 = (-b - Math.sqrt(delta)) / (2 * a);
+
+
+        }
+        function mostrarResultado() {
+            const resultado = document.getElementById('resultado');
+
+            if (isNaN(x1) || isNaN(x2)) {
+                resultado.innerHTML = "Delta negativo, não existem raízes reais.";
+                return;
+            }
+            if (x1 === x2) {
+                resultado.innerHTML = `Raiz única: ${x1}`;
+            }   else {
+                resultado.innerHTML = `Raízes: ${x1} e ${x2}`;
+            }
+        }
+        document.querySelector('button').addEventListener('click', function () {
+            calcularBhaskara();
+            mostrarResultado();
+
+            document.getElementById('a').value = '';
+            document.getElementById('b').value = '';
+            document.getElementById('c').value = '';
+        });
+
+    </script>
+</body>
+
+</html>

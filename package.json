@@ -1,0 +1,16 @@
+{
+  "name": "calculadora2grau",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "electron-packager . Relogio --platform=win32 --arch=x64 --icon=icon.ico --out=dist --overwrite"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "^35.2.0",
+    "electron-packager": "^17.1.2"
+  }
+}

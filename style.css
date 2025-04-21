@@ -1,0 +1,92 @@
+* {
+    padding: none;
+    margin: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1d081d;
+    color: white;
+}
+
+body {
+    height: 100dvh;
+    display: flex;
+    justify-content: space-araound;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+input {
+    width: 300px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    background-color: #3b103a;
+    color: white;
+    padding-left: 10px;
+    outline: none;
+
+}
+
+input::placeholder {
+    color: rgb(210, 210, 210);
+}
+
+button {
+    width: 150px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    background-color: #3b103a;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #581957;
+    width: 160px;
+
+}
+
+
+.final h3 { 
+    text-align: center;
+}
+.pulsando {
+    animation: pulsar 3s infinite ease-in-out;
+}
+
+@keyframes pulsar {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
